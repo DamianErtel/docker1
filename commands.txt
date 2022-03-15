@@ -1,4 +1,7 @@
 docker exec -it node-app bash
+// enter docker container shell
+docker build -t node-app-image .
+// build docker image
 docker run -v ${pwd}:/app  -p 3002:3002 -d --name node-app node-app-image
 docker run -v ${pwd}:/app:ro -v /app/node_modules --env PORT=4000  -p 3002:4000 -d --name node-app node-app-image
 // read only && dont remove node_modules && change env && change linux expose port
