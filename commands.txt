@@ -12,3 +12,7 @@ docker rm node-app -fv
 docker rmi node-app-image -f
 docker volume prune
 // deletes unused volumes
+docker-compose -f .\docker-compose.yml -f .\docker-compose.dev.yml up -d --build
+//run container && build image from 2 different docker-compose files
+docker-compose -f .\docker-compose.yml -f .\docker-compose.dev.yml down -v
+// stop container
