@@ -10,4 +10,10 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+    env_file:
+      - ./.env
     command: npm run dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rancid
+      - MONGO_INITDB_ROOT_PASSWORD=password
